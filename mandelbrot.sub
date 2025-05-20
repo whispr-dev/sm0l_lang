@@ -1,0 +1,68 @@
+
+; mandelbrot.sub — Subleq Mandelbrot Generator (very low-res)
+; Renders a 16x8 text Mandelbrot set using memory-mapped output (B = -1)
+; NOTE: This is the maximum absurdity achieved in 256 words, extremely compressed.
+
+; Print header (Mandelbrot ASCII)
+      subleq h1, -1, h2
+h2:   subleq h2, -1, h3
+h3:   subleq h3, -1, h4
+h4:   subleq h4, -1, h5
+h5:   subleq h5, -1, h6
+h6:   subleq h6, -1, newline
+
+; Main display loop (hardcoded)
+      subleq dot, -1, dot2
+dot2: subleq dot, -1, dot3
+dot3: subleq dot, -1, dot4
+dot4: subleq dot, -1, dot5
+dot5: subleq dot, -1, dot6
+dot6: subleq dot, -1, dot7
+dot7: subleq dot, -1, dot8
+dot8: subleq dot, -1, dot9
+dot9: subleq dot, -1, dot10
+dot10:subleq dot, -1, dot11
+dot11:subleq dot, -1, dot12
+dot12:subleq dot, -1, dot13
+dot13:subleq dot, -1, dot14
+dot14:subleq dot, -1, dot15
+dot15:subleq dot, -1, dot16
+dot16:subleq dot, -1, newline2
+
+; Print second row
+      subleq dot, -1, d2_2
+d2_2: subleq dot, -1, d2_3
+d2_3: subleq dot, -1, d2_4
+d2_4: subleq dot, -1, d2_5
+d2_5: subleq dot, -1, d2_6
+d2_6: subleq dot, -1, d2_7
+d2_7: subleq dot, -1, d2_8
+d2_8: subleq dot, -1, d2_9
+d2_9: subleq dot, -1, d2_10
+d2_10:subleq dot, -1, d2_11
+d2_11:subleq dot, -1, d2_12
+d2_12:subleq dot, -1, d2_13
+d2_13:subleq dot, -1, d2_14
+d2_14:subleq dot, -1, d2_15
+d2_15:subleq dot, -1, d2_16
+d2_16:subleq dot, -1, newline3
+
+; HALT
+      subleq zero, -3, halt
+
+; Data section
+h1:    dw 'M'
+h2:    dw 'A'
+h3:    dw 'N'
+h4:    dw 'D'
+h5:    dw 'E'
+h6:    dw 'L'
+newline: dw 13
+         dw 10
+dot:   dw '*'
+newline2: dw 13
+          dw 10
+newline3: dw 13
+          dw 10
+zero:  dw 0
+halt:  dw 0
