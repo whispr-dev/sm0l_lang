@@ -1,3 +1,0 @@
-start:   subleq charbuf, -2, print     ; get key into charbuf
-print:   subleq charbuf, -1, start     ; print char, then repeat
-charbuf: dw 0

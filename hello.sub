@@ -1,3 +1,0 @@
-start:  subleq msg1, -1, next
-next:   subleq 0, 0, start
-msg1:   dw 'H'
