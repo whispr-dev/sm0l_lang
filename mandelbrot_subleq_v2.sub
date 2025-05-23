@@ -1,0 +1,60 @@
+
+; mandelbrot_subleq_v2.sub — Expanded fake output with gradient ASCII
+; This still hardcodes output but simulates a fractal with more detail
+
+; Print banner
+        subleq title1, -1, title2
+title2: subleq title2, -1, title3
+title3: subleq title3, -1, title4
+title4: subleq title4, -1, newline
+
+; Row 1
+        subleq g1, -1, g2
+g2:     subleq g2, -1, g3
+g3:     subleq g3, -1, g4
+g4:     subleq g4, -1, g5
+g5:     subleq g5, -1, g6
+g6:     subleq g6, -1, g7
+g7:     subleq g7, -1, g8
+g8:     subleq g8, -1, g9
+g9:     subleq g9, -1, g10
+g10:    subleq g10, -1, newline2
+
+; Row 2
+        subleq g3, -1, r2b
+r2b:    subleq g2, -1, r2c
+r2c:    subleq g4, -1, r2d
+r2d:    subleq g6, -1, r2e
+r2e:    subleq g7, -1, r2f
+r2f:    subleq g8, -1, r2g
+r2g:    subleq g9, -1, r2h
+r2h:    subleq g10, -1, newline3
+
+; HALT
+        subleq zero, -3, halt
+
+; ASCII data
+title1: dw 'M'
+title2: dw 'B'
+title3: dw '2'
+title4: dw ':'
+newline: dw 13
+         dw 10
+
+g1:  dw '.'
+g2:  dw ':'
+g3:  dw '-'
+g4:  dw '='
+g5:  dw '+'
+g6:  dw '*'
+g7:  dw '#'
+g8:  dw '@'
+g9:  dw '%'
+g10: dw '$'
+
+newline2: dw 13
+          dw 10
+newline3: dw 13
+          dw 10
+zero: dw 0
+halt: dw 0

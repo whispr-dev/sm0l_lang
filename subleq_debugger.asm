@@ -37,7 +37,7 @@ start:
     ; --- HALT if B == -3 ---
     cmp word [b], -3
     jne .check_output
-    jmp .halt
+    jmp halt
 
 .check_output:
     cmp word [b], -1
@@ -189,7 +189,7 @@ print_num:
     popa
     ret
 
-.halt:
+halt:
     mov ah, 0x4C
     xor al, al
     int 21h
